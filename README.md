@@ -9,6 +9,7 @@
 4. Add index.js to server folder & start building basic functions
 5. Start to build database and tables
 6. Connect server to database with server file db.js
-7. Start building the routes, starting with the auth (Register / Login) routes
-8. Generate the JWT token (JWT Generator) and add to jwtAuth file
-9. Set up the middleware
+7. Start building the routes, starting with the auth (Register / Login) routes (hwtAuth.js)
+8. Generate the JWT token utility (jwtGenerator.js) and add to jwtAuth file
+9. Set up the middleware (authorization.js, validInfo.js) and add it to the jwtAuth file
+10. Set up the private routes
