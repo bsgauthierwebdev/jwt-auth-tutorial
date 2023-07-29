@@ -13,6 +13,10 @@ app.use(cors())
 
 app.use('/auth', require('./Routes/jwtAuth'))
 
+// Dashboard Route
+
+app.use ('/dashboard', require('./Routes/dashboard'))
+
 app.listen(8800, () => {
     console.log('Listening on port 8800')
 })
