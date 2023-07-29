@@ -99,7 +99,7 @@ router.post('/login', validInfo, async(req, res) => {
 
 // Router to check if user is verified
 
-router.get('/is-verified', authorization, async(req, res) => {
+router.get('/verify', authorization, async(req, res) => {
     try {
 
         res.json(true)
