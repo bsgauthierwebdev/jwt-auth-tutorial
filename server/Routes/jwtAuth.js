@@ -2,9 +2,11 @@ const router = require('express').Router()
 const pool = require('../db')
 const bcrypt = require('bcrypt')
 const jwtGenerator = require('../Utils/jwtGenerator')
+const validInfo = require('../Middleware/validInfo')
+const authorization = require('../Middleware/authorization')
 
 // Register new user
-router.post('/register', async(req, res) => {
+router.post('/register', validInfo, async(req, res) => {
     try {
         // Step 1 - Destructure req.body(name, email, password)
 
@@ -54,7 +56,7 @@ router.post('/register', async(req, res) => {
 
 // Login existing user
 
-router.post('/login', async(req, res) => {
+router.post('/login', validInfo, async(req, res) => {
     try {
         
         // Step 1 - Destructure req.body
@@ -89,6 +91,19 @@ router.post('/login', async(req, res) => {
 
         res.json({token})
 
+    } catch (err) {
+        console.error(err.message)
+        res.status(500).send('Server error')
+    }
+})
+
+// Router to check if user is verified
+
+router.get('/is-verified', authorization, async(req, res) => {
+    try {
+
+        res.json(true)
+        
     } catch (err) {
         console.error(err.message)
         res.status(500).send('Server error')
