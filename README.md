@@ -13,3 +13,4 @@
 8. Generate the JWT token utility (jwtGenerator.js) and add to jwtAuth file
 9. Set up the middleware (authorization.js, validInfo.js) and add it to the jwtAuth file
 10. Set up the private routes
+11. Create dashboard route, requiring check to see if user is authorized for that area
