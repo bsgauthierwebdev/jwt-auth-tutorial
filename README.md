@@ -51,3 +51,5 @@
 29. Add the onChange call to the input fields
 30. Build the onSubmit function to log in
 31. Attach the form to the onSubmit function
+
+#### Dashboard Component
