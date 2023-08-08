@@ -16,3 +16,4 @@
 11. Create dashboard route, requiring check to see if user is authorized for that area
 
 #### Frontend Development Steps:
+1. Create React application 'client'
