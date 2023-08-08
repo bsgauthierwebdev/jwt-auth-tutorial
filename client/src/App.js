@@ -16,6 +16,10 @@ function App() {
 
   const [isAuthenticated, setIsAuthenticated] = useState(false)
 
+  const setAuth = (boolean) => {
+    setIsAuthenticated(boolean)
+  }
+
   return (
     <Fragment>
       <Router>
@@ -26,7 +30,7 @@ function App() {
               path = '/login'
               element = {
                 !isAuthenticated ? (
-                  <Login />
+                  <Login setAuth = {setAuth} />
                 ) : (
                   <Navigate to = {'/dashboard'} />
                 )
@@ -37,7 +41,7 @@ function App() {
               path = '/register'
               element = {
                 !isAuthenticated ? (
-                  <Register />
+                  <Register setAuth = {setAuth} />
                 ) : (
                   <Navigate to = {'/login'} />
                 )
@@ -48,7 +52,7 @@ function App() {
               path = '/dashboard'
               element = {
                 isAuthenticated ? (
-                  <Dashboard />
+                  <Dashboard setAuth = {setAuth} />
                 ) : (
                   <Navigate to = '/login' />
                 )
