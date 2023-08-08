@@ -17,3 +17,24 @@
 
 #### Frontend Development Steps:
 1. Create React application 'client'
+2. Delete unnecessary files - App.test.js, logo.svg, reportWebVitals.js, setupTests.js
+3. Clean up App.js, index.js and index.html files
+4. Create Components folder in src folder
+5. Create component files for Dashboard, Login & Register
+6. Install dependencies - React-Router-Dom, React-Toastify
+7. Import BrowserRouter, Routes, Route & Navigate from react-router-dom into App.js
+8. Build route structure in App.js
+9. Import useState into App.js
+10. Set up isAuthenticated state in App.js
+11. Build setAuth() function to authenticate users
+12. Add setAuth call to each of the route elements
+13. Test setAuth by adding buttons in Login & Dashboard components to change the status (true/false)
+14. Start building Register components, adding useState hook
+15. Build form to enter new user's information (username, email, password)
+16. Use useState to set the value of the inputs
+17. Create function to handle change in input values
+18. Set up the onChange function to handle setting the value of the inputs
+19. Create submit function to handle registering the user
+20. Tie the submit function to the form via onSubmit function
+21. Test function to make sure registration works and responds with a token
+22. Add token to local storage so the setAuth state reads "true"
