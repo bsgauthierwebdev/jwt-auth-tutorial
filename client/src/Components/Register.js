@@ -1,4 +1,5 @@
 import React, {Fragment, useState} from 'react'
+import { Link } from 'react-router-dom'
 
 const Register = ({setAuth}) => {
 
@@ -83,6 +84,8 @@ const Register = ({setAuth}) => {
             Register
           </button>
         </form>
+        <p>Already registered?</p>
+        <Link to = '/login'>Log In</Link>
     </Fragment>
   )
 }
