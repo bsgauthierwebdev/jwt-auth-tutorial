@@ -53,3 +53,18 @@
 31. Attach the form to the onSubmit function
 
 #### Dashboard Component
+32. Import useState & useEffect
+33. Remove logout function currently in place
+34. Set up useState for name (or any other information to be imported upon login)
+35.  Set up useEffect to call the function to grab user info on login
+36. Build the function to grab the user info 
+37. Build logout button
+
+#### Validate JWT Token When Refresh (App.js Component)
+38. Import useEffect and implement
+39. Build isAuth function to check authorization and redirect users as needed
+
+#### Add Notification with React-Toastify
+40. In the App component, import the React Toastify components
+41. Add the toast.configure() call
+42. Import components into the Login component
