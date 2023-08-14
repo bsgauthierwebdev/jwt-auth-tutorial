@@ -1,5 +1,7 @@
 import React, {Fragment, useState} from 'react'
 import {Link} from 'react-router-dom'
+import {toast, ToastContainer} from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 const Login = ({setAuth}) => {
 
@@ -36,9 +38,15 @@ const Login = ({setAuth}) => {
 
       // console.log(parseRes)
 
-      localStorage.setItem('token', parseRes.token)
-
-      setAuth(true)
+      if (parseRes.token) {
+        localStorage.setItem('token', parseRes.token)
+    
+        setAuth(true)
+        toast.success('Login successful')
+      } else {
+        setAuth(false)
+        toast.error(parseRes)
+      }
 
     } catch (err) {
       console.error(err.message)
@@ -71,6 +79,7 @@ const Login = ({setAuth}) => {
         </form>
         <p>Not yet a member?</p>
         <Link to = '/register'>Register</Link>
+        <ToastContainer />
     </Fragment>
   )
 }

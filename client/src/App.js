@@ -1,16 +1,20 @@
-import React, {Fragment, useState} from 'react'
+import React, {Fragment, useState, useEffect} from 'react'
 import {
   BrowserRouter as Router, 
   Routes, // Switch in tutorial
   Route, 
   Navigate, // Redirect in tutorial
 } from 'react-router-dom'
+import {toast} from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 import './App.css'
 
 // Import components
 import Dashboard from './Components/Dashboard';
 import Login from './Components/Login';
 import Register from './Components/Register';
+
+// toast.configure()
 
 function App() {
 
@@ -19,6 +23,30 @@ function App() {
   const setAuth = (boolean) => {
     setIsAuthenticated(boolean)
   }
+
+  async function isAuth() {
+    try {
+      
+      const response = await fetch(
+        'http://localhost:8800/auth/verify', {
+          method: 'GET',
+          headers: {token: localStorage.token}
+        }
+      )
+
+      const parseRes = await response.json()
+
+      // console.log(parseRes)
+      
+      parseRes === true ? setIsAuthenticated(true) : setIsAuthenticated(false)
+    } catch (err) {
+      console.error(err.message)
+    }
+  }
+
+  useEffect(() => {
+    isAuth()
+  })
 
   return (
     <Fragment>
